@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://boaa00q22ymej"]
+
+[ext_resource type="Script" uid="uid://csxohh48kqkrj" path="res://game_manager.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://b23c5a0i5qjfr" path="res://resourceDisplay.gd" id="2_0xm2m"]
+
+[node name="Main" type="Node2D" unique_id=440670148]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=830784210]
+
+[node name="Game Manager" type="Node2D" parent="." unique_id=876274394]
+script = ExtResource("1_ig7tw")
+
+[node name="Menus" type="Node2D" parent="Game Manager" unique_id=68748060]
+scale = Vector2(1, 0.4699248)
+
+[node name="Buildings" type="Node2D" parent="Game Manager/Menus" unique_id=1419807326]
+
+[node name="Upgrades" type="Node2D" parent="Game Manager/Menus" unique_id=68757264]
+
+[node name="Resources" type="Node2D" parent="Game Manager/Menus" unique_id=1874946847]
+script = ExtResource("2_0xm2m")
+
+[node name="Resource Screen" type="ColorRect" parent="Game Manager/Menus/Resources" unique_id=1142604236]
+offset_left = -614.99994
+offset_top = -642.65594
+offset_right = -482.99994
+offset_bottom = -387.29596
+scale = Vector2(1.7328353, 1.7328353)
+color = Color(0.9909238, 0.8063483, 0.5260297, 1)
+
+[node name="Food" type="ColorRect" parent="Game Manager/Menus/Resources/Resource Screen" unique_id=1531625414]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 8.512
+offset_right = 61.0
+offset_bottom = 48.512
+
+[node name="FoodCount" type="Label" parent="Game Manager/Menus/Resources/Resource Screen/Food" unique_id=395523445]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 8.512
+offset_right = 68.0
+offset_bottom = 31.512001
+text = "Food"
+uppercase = true
+
+[node name="Wood" type="ColorRect" parent="Game Manager/Menus/Resources/Resource Screen" unique_id=270531913]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 55.327972
+offset_right = 61.0
+offset_bottom = 95.32797
+
+[node name="WoodCount" type="Label" parent="Game Manager/Menus/Resources/Resource Screen/Wood" unique_id=1632116342]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 8.512048
+offset_right = 85.0
+offset_bottom = 31.512047
+text = "Wood"
+text_overrun_behavior = 2
+uppercase = true
+
+[node name="Stone" type="ColorRect" parent="Game Manager/Menus/Resources/Resource Screen" unique_id=1363539191]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 104.272
+offset_right = 61.0
+offset_bottom = 144.272
+
+[node name="StoneCount" type="Label" parent="Game Manager/Menus/Resources/Resource Screen/Stone" unique_id=1142732747]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 10.639999
+offset_right = 85.0
+offset_bottom = 33.64
+text = "Stone"
+text_overrun_behavior = 2
+uppercase = true
+
+[node name="Gold" type="ColorRect" parent="Game Manager/Menus/Resources/Resource Screen" unique_id=1624881172]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 153.21597
+offset_right = 61.0
+offset_bottom = 193.21597
+
+[node name="GoldCount" type="Label" parent="Game Manager/Menus/Resources/Resource Screen/Gold" unique_id=862371556]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 8.512009
+offset_right = 84.0
+offset_bottom = 31.512009
+text = "Gold"
+text_overrun_behavior = 2
+uppercase = true
+
+[node name="Pop" type="ColorRect" parent="Game Manager/Menus/Resources/Resource Screen" unique_id=473284411]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 202.15997
+offset_right = 61.0
+offset_bottom = 242.15997
+
+[node name="PopCount" type="Label" parent="Game Manager/Menus/Resources/Resource Screen/Pop" unique_id=1244538436]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 8.512009
+offset_right = 80.0
+offset_bottom = 31.512009
+text = "POP"
+text_overrun_behavior = 2
+uppercase = true
+
+[node name="Open_Close" type="ColorRect" parent="Game Manager/Menus/Resources/Resource Screen" unique_id=1393054954]
+layout_mode = 0
+offset_left = 132.15332
+offset_top = -3.71933e-05
+offset_right = 172.15332
+offset_bottom = 39.99996
+scale = Vector2(0.7188521, 1.3722993)
+color = Color(0.9642958, 0.65068066, 0.33907816, 1)
+
+[node name="UpdateTick" type="Timer" parent="Game Manager" unique_id=176339800]
+process_callback = 0
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Game Manager/UpdateTick" to="Game Manager" method="_on_update_tick_timeout"]

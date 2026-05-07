@@ -1,0 +1,269 @@
+[gd_scene format=3 uid="uid://boaa00q22ymej"]
+
+[ext_resource type="Script" uid="uid://csxohh48kqkrj" path="res://game_manager.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://b23c5a0i5qjfr" path="res://resourceDisplay.gd" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://b83hyawn3lhqm" path="res://NodeUpgrades.gd" id="2_5vw27"]
+[ext_resource type="Texture2D" uid="uid://co1ptfc6rkwet" path="res://Sprites/Resources/grain.png" id="3_272bh"]
+[ext_resource type="Texture2D" uid="uid://b4jl2rqmd6kan" path="res://Sprites/Resources/log.png" id="4_5vw27"]
+[ext_resource type="Texture2D" uid="uid://tp5n6qav8hth" path="res://Sprites/Resources/stone-block.png" id="5_kek77"]
+[ext_resource type="Texture2D" uid="uid://buf2omfd6cpek" path="res://Sprites/Resources/two-coins.png" id="6_4c57u"]
+[ext_resource type="Texture2D" uid="uid://cetuuujvt7ayu" path="res://Sprites/Resources/backup.png" id="7_efxa6"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_kek77"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4c57u"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_efxa6"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_dg77c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_h2yge"]
+font_size = 40
+
+[node name="Main" type="Node2D" unique_id=440670148]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=830784210]
+
+[node name="MainLand" type="Node2D" parent="." unique_id=532795979]
+
+[node name="Ground" type="MeshInstance2D" parent="MainLand" unique_id=1695883037]
+modulate = Color(0.2509804, 0.5254902, 0.15294118, 1)
+scale = Vector2(878.8136, 450.01376)
+mesh = SubResource("SphereMesh_kek77")
+
+[node name="Resource Nodes" type="Node2D" parent="MainLand" unique_id=1237781113]
+script = ExtResource("2_5vw27")
+
+[node name="GrainField" type="MeshInstance2D" parent="MainLand/Resource Nodes" unique_id=1335582084]
+modulate = Color(0.92941177, 0.80784315, 0.34901962, 1)
+position = Vector2(-234.99998, -115)
+rotation = 1.1571532
+scale = Vector2(97.88563, 139.88985)
+mesh = SubResource("CapsuleMesh_4c57u")
+
+[node name="Stone" type="MeshInstance2D" parent="MainLand/Resource Nodes" unique_id=519421251]
+modulate = Color(0.5330367, 0.5330367, 0.5330367, 1)
+position = Vector2(-201, 124)
+rotation = -1.2967796
+scale = Vector2(99.68979, 148.88037)
+mesh = SubResource("CapsuleMesh_efxa6")
+
+[node name="Wood" type="MeshInstance2D" parent="MainLand/Resource Nodes" unique_id=1612883074]
+modulate = Color(0.19791803, 0.42829314, 0.17368901, 1)
+position = Vector2(228, 110.99999)
+rotation = 1.118756
+scale = Vector2(114.354996, 147.28815)
+mesh = SubResource("CapsuleMesh_dg77c")
+
+[node name="FieldButton" type="Button" parent="MainLand/Resource Nodes" unique_id=1775432844]
+offset_left = -246.0
+offset_top = -129.0
+offset_right = -208.0
+offset_bottom = -91.0
+text = "Grain"
+
+[node name="StoneButton" type="Button" parent="MainLand/Resource Nodes" unique_id=1771827390]
+offset_left = -242.0
+offset_top = 102.0
+offset_right = -189.0
+offset_bottom = 144.0
+text = "Stone"
+
+[node name="ForestButton" type="Button" parent="MainLand/Resource Nodes" unique_id=1123898494]
+offset_left = 211.0
+offset_top = 87.0
+offset_right = 268.0
+offset_bottom = 134.0
+text = "Forest"
+
+[node name="Game Manager" type="Node2D" parent="." unique_id=876274394]
+script = ExtResource("1_ig7tw")
+
+[node name="Menus" type="Node2D" parent="Game Manager" unique_id=68748060]
+scale = Vector2(1, 0.4699248)
+
+[node name="Buildings" type="Node2D" parent="Game Manager/Menus" unique_id=1419807326]
+
+[node name="Upgrades" type="Node2D" parent="Game Manager/Menus" unique_id=68757264]
+
+[node name="ColorRect" type="ColorRect" parent="Game Manager/Menus/Upgrades" unique_id=903323668]
+offset_left = 378.0
+offset_top = -721.392
+offset_right = 625.0
+offset_bottom = 42.12799
+color = Color(0.9909238, 0.8063483, 0.5260297, 1)
+
+[node name="Resources" type="Node2D" parent="Game Manager/Menus" unique_id=1874946847]
+script = ExtResource("2_0xm2m")
+
+[node name="ResourceMenuClose2" type="ColorRect" parent="Game Manager/Menus/Resources" unique_id=1393054954]
+offset_left = -387.00003
+offset_top = -642.656
+offset_right = -347.00003
+offset_bottom = -602.656
+scale = Vector2(0.7188521, 1.3722993)
+color = Color(0.9642958, 0.65068066, 0.33907816, 1)
+
+[node name="CloseResource" type="Button" parent="Game Manager/Menus/Resources/ResourceMenuClose2" unique_id=539685820]
+layout_mode = 0
+offset_right = 40.139618
+offset_bottom = 40.139618
+text = "<<<"
+flat = true
+
+[node name="ResourceMenuOpen" type="ColorRect" parent="Game Manager/Menus/Resources" unique_id=363970590]
+offset_left = -574.0
+offset_top = -642.656
+offset_right = -534.0
+offset_bottom = -602.656
+scale = Vector2(0.7188521, 1.3722993)
+color = Color(0.9642958, 0.65068066, 0.33907816, 1)
+
+[node name="OpenResource" type="Button" parent="Game Manager/Menus/Resources/ResourceMenuOpen" unique_id=413872939]
+layout_mode = 0
+offset_right = 40.139618
+offset_bottom = 40.139618
+text = ">>>"
+flat = true
+
+[node name="Resource Screen" type="ColorRect" parent="Game Manager/Menus/Resources" unique_id=1142604236]
+offset_left = -615.0
+offset_top = -642.65607
+offset_right = -483.0
+offset_bottom = -387.29608
+scale = Vector2(1.7328353, 1.7328353)
+color = Color(0.9909238, 0.8063483, 0.5260297, 1)
+
+[node name="Food" type="ColorRect" parent="Game Manager/Menus/Resources/Resource Screen" unique_id=1531625414]
+layout_mode = 0
+offset_left = 31.739843
+offset_top = 8.596286
+offset_right = 51.739845
+offset_bottom = 48.596287
+
+[node name="FoodSprite" type="Sprite2D" parent="Game Manager/Menus/Resources/Resource Screen/Food" unique_id=28833401]
+position = Vector2(10.099053, 20.652464)
+scale = Vector2(0.03944939, 0.08242612)
+texture = ExtResource("3_272bh")
+
+[node name="FoodCount" type="Label" parent="Game Manager/Menus/Resources/Resource Screen/Food" unique_id=395523445]
+layout_mode = 0
+offset_left = 28.854
+offset_top = 6.0
+offset_right = 142.854
+offset_bottom = 62.490112
+scale = Vector2(0.5, 0.5)
+text = "Food"
+label_settings = SubResource("LabelSettings_0xm2m")
+uppercase = true
+
+[node name="Wood" type="ColorRect" parent="Game Manager/Menus/Resources/Resource Screen" unique_id=270531913]
+layout_mode = 0
+offset_left = 31.739843
+offset_top = 55.41226
+offset_right = 51.739845
+offset_bottom = 95.41226
+
+[node name="WoodSprite" type="Sprite2D" parent="Game Manager/Menus/Resources/Resource Screen/Wood" unique_id=966977169]
+position = Vector2(10.308341, 19.595901)
+scale = Vector2(0.040267006, 0.081169315)
+texture = ExtResource("4_5vw27")
+
+[node name="WoodCount" type="Label" parent="Game Manager/Menus/Resources/Resource Screen/Wood" unique_id=1632116342]
+layout_mode = 0
+offset_left = 28.854
+offset_top = 6.0
+offset_right = 162.084
+offset_bottom = 62.490112
+scale = Vector2(0.5, 0.5)
+text = "Wood"
+label_settings = SubResource("LabelSettings_h2yge")
+text_overrun_behavior = 2
+uppercase = true
+
+[node name="Stone" type="ColorRect" parent="Game Manager/Menus/Resources/Resource Screen" unique_id=1363539191]
+layout_mode = 0
+offset_left = 31.739843
+offset_top = 104.356285
+offset_right = 51.739845
+offset_bottom = 144.3563
+
+[node name="StoneCount" type="Label" parent="Game Manager/Menus/Resources/Resource Screen/Stone" unique_id=1142732747]
+layout_mode = 0
+offset_left = 28.854
+offset_top = 6.0
+offset_right = 162.084
+offset_bottom = 62.490112
+scale = Vector2(0.5, 0.5)
+text = "Stone"
+label_settings = SubResource("LabelSettings_h2yge")
+text_overrun_behavior = 2
+uppercase = true
+
+[node name="StoneSprite" type="Sprite2D" parent="Game Manager/Menus/Resources/Resource Screen/Stone" unique_id=1175444675]
+position = Vector2(10.387599, 19.67623)
+scale = Vector2(0.03933838, 0.08002764)
+texture = ExtResource("5_kek77")
+
+[node name="Gold" type="ColorRect" parent="Game Manager/Menus/Resources/Resource Screen" unique_id=1624881172]
+layout_mode = 0
+offset_left = 31.739843
+offset_top = 153.30026
+offset_right = 51.739845
+offset_bottom = 193.30026
+
+[node name="GoldCount" type="Label" parent="Game Manager/Menus/Resources/Resource Screen/Gold" unique_id=862371556]
+layout_mode = 0
+offset_left = 28.854
+offset_top = 6.0
+offset_right = 162.084
+offset_bottom = 62.490112
+scale = Vector2(0.5, 0.5)
+text = "Gold"
+label_settings = SubResource("LabelSettings_h2yge")
+text_overrun_behavior = 2
+uppercase = true
+
+[node name="GoldSprite" type="Sprite2D" parent="Game Manager/Menus/Resources/Resource Screen/Gold" unique_id=276833413]
+position = Vector2(9.968997, 20.887268)
+scale = Vector2(0.039957467, 0.080788784)
+texture = ExtResource("6_4c57u")
+
+[node name="Pop" type="ColorRect" parent="Game Manager/Menus/Resources/Resource Screen" unique_id=473284411]
+layout_mode = 0
+offset_left = 31.739843
+offset_top = 202.24426
+offset_right = 51.739845
+offset_bottom = 242.24426
+
+[node name="PopCount" type="Label" parent="Game Manager/Menus/Resources/Resource Screen/Pop" unique_id=1244538436]
+layout_mode = 0
+offset_left = 28.854
+offset_top = 6.0
+offset_right = 162.084
+offset_bottom = 62.490112
+scale = Vector2(0.5, 0.5)
+text = "POP"
+label_settings = SubResource("LabelSettings_h2yge")
+text_overrun_behavior = 2
+uppercase = true
+
+[node name="PopSprite" type="Sprite2D" parent="Game Manager/Menus/Resources/Resource Screen/Pop" unique_id=450716020]
+position = Vector2(10.229122, 20.22673)
+scale = Vector2(0.03995743, 0.08078875)
+texture = ExtResource("7_efxa6")
+
+[node name="UpdateTick" type="Timer" parent="Game Manager" unique_id=176339800]
+process_callback = 0
+wait_time = 3.0
+autostart = true
+
+[connection signal="pressed" from="MainLand/Resource Nodes/FieldButton" to="MainLand/Resource Nodes" method="_on_field_button_pressed"]
+[connection signal="pressed" from="MainLand/Resource Nodes/StoneButton" to="MainLand/Resource Nodes" method="_on_stone_button_pressed"]
+[connection signal="pressed" from="MainLand/Resource Nodes/ForestButton" to="MainLand/Resource Nodes" method="_on_forest_button_pressed"]
+[connection signal="pressed" from="Game Manager/Menus/Resources/ResourceMenuClose2/CloseResource" to="Game Manager" method="_on_close_resource_pressed"]
+[connection signal="pressed" from="Game Manager/Menus/Resources/ResourceMenuOpen/OpenResource" to="Game Manager" method="_on_open_resource_pressed"]
+[connection signal="timeout" from="Game Manager/UpdateTick" to="Game Manager" method="_on_update_tick_timeout"]
