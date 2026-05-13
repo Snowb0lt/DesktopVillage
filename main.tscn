@@ -17,10 +17,10 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_dg77c"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
+[sub_resource type="LabelSettings" id="LabelSettings_h2yge"]
 font_size = 40
 
-[sub_resource type="LabelSettings" id="LabelSettings_h2yge"]
+[sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
 font_size = 40
 
 [node name="Main" type="Node2D" unique_id=440670148]
@@ -90,11 +90,152 @@ scale = Vector2(1, 0.4699248)
 [node name="Upgrades" type="Node2D" parent="Game Manager/Menus" unique_id=68757264]
 
 [node name="ColorRect" type="ColorRect" parent="Game Manager/Menus/Upgrades" unique_id=903323668]
-offset_left = 378.0
-offset_top = -721.392
-offset_right = 625.0
-offset_bottom = 42.12799
+offset_left = 349.0
+offset_top = -695.856
+offset_right = 596.0
+offset_bottom = 67.664
 color = Color(0.9909238, 0.8063483, 0.5260297, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Costs" type="Node2D" parent="Game Manager/Menus/Upgrades" unique_id=349158737]
+position = Vector2(332, -402.19208)
+scale = Vector2(1.3597342, 1.3597342)
+
+[node name="Label" type="Label" parent="Game Manager/Menus/Upgrades/Costs" unique_id=561093146]
+offset_left = 27.380955
+offset_top = 1.2666668
+offset_right = 79.485954
+offset_bottom = 39.441666
+theme_override_font_sizes/font_size = 24
+text = "Costs"
+metadata/_edit_use_anchors_ = true
+
+[node name="Wood" type="ColorRect" parent="Game Manager/Menus/Upgrades/Costs" unique_id=711467270]
+offset_left = 31.739843
+offset_top = 55.41226
+offset_right = 51.739845
+offset_bottom = 95.41226
+metadata/_edit_use_anchors_ = true
+
+[node name="WoodSprite" type="Sprite2D" parent="Game Manager/Menus/Upgrades/Costs/Wood" unique_id=299365950]
+position = Vector2(10.308341, 19.595901)
+scale = Vector2(0.040267006, 0.081169315)
+texture = ExtResource("4_5vw27")
+
+[node name="WoodCost" type="Label" parent="Game Manager/Menus/Upgrades/Costs/Wood" unique_id=982094891]
+layout_mode = 0
+offset_left = 28.854
+offset_top = 6.0
+offset_right = 162.084
+offset_bottom = 62.490112
+scale = Vector2(0.5, 0.5)
+text = "Wood"
+label_settings = SubResource("LabelSettings_h2yge")
+text_overrun_behavior = 2
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Stone" type="ColorRect" parent="Game Manager/Menus/Upgrades/Costs" unique_id=886589615]
+offset_left = 31.739843
+offset_top = 104.356285
+offset_right = 51.739845
+offset_bottom = 144.3563
+metadata/_edit_use_anchors_ = true
+
+[node name="StoneCost" type="Label" parent="Game Manager/Menus/Upgrades/Costs/Stone" unique_id=1485553955]
+layout_mode = 0
+offset_left = 28.854
+offset_top = 6.0
+offset_right = 162.084
+offset_bottom = 62.490112
+scale = Vector2(0.5, 0.5)
+text = "Stone"
+label_settings = SubResource("LabelSettings_h2yge")
+text_overrun_behavior = 2
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="StoneSprite" type="Sprite2D" parent="Game Manager/Menus/Upgrades/Costs/Stone" unique_id=45792877]
+position = Vector2(10.387599, 19.67623)
+scale = Vector2(0.03933838, 0.08002764)
+texture = ExtResource("5_kek77")
+
+[node name="Gold" type="ColorRect" parent="Game Manager/Menus/Upgrades/Costs" unique_id=1334575015]
+offset_left = 31.739843
+offset_top = 153.30026
+offset_right = 51.739845
+offset_bottom = 193.30026
+metadata/_edit_use_anchors_ = true
+
+[node name="GoldCost" type="Label" parent="Game Manager/Menus/Upgrades/Costs/Gold" unique_id=1246828356]
+layout_mode = 0
+offset_left = 28.854
+offset_top = 6.0
+offset_right = 162.084
+offset_bottom = 62.490112
+scale = Vector2(0.5, 0.5)
+text = "Gold"
+label_settings = SubResource("LabelSettings_h2yge")
+text_overrun_behavior = 2
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="GoldSprite" type="Sprite2D" parent="Game Manager/Menus/Upgrades/Costs/Gold" unique_id=1904454129]
+position = Vector2(9.968997, 20.887268)
+scale = Vector2(0.039957467, 0.080788784)
+texture = ExtResource("6_4c57u")
+
+[node name="Pop" type="ColorRect" parent="Game Manager/Menus/Upgrades/Costs" unique_id=649743320]
+offset_left = 31.739843
+offset_top = 202.24426
+offset_right = 51.739845
+offset_bottom = 242.24426
+metadata/_edit_use_anchors_ = true
+
+[node name="PopCost" type="Label" parent="Game Manager/Menus/Upgrades/Costs/Pop" unique_id=385560372]
+layout_mode = 0
+offset_left = 28.854
+offset_top = 6.0
+offset_right = 162.084
+offset_bottom = 62.490112
+scale = Vector2(0.5, 0.5)
+text = "POP"
+label_settings = SubResource("LabelSettings_h2yge")
+text_overrun_behavior = 2
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="PopSprite" type="Sprite2D" parent="Game Manager/Menus/Upgrades/Costs/Pop" unique_id=231708481]
+position = Vector2(10.229122, 20.22673)
+scale = Vector2(0.03995743, 0.08078875)
+texture = ExtResource("7_efxa6")
+
+[node name="Upgrade Name" type="Label" parent="Game Manager/Menus/Upgrades" unique_id=808580918]
+offset_left = 366.0
+offset_top = -672.448
+offset_right = 574.0
+offset_bottom = -627.448
+theme_override_font_sizes/font_size = 25
+text = "Name | Level"
+metadata/_edit_use_anchors_ = true
+
+[node name="Upgrade Desc" type="Label" parent="Game Manager/Menus/Upgrades" unique_id=1749622798]
+offset_left = 373.0
+offset_top = -589.456
+offset_right = 573.0
+offset_bottom = -389.456
+theme_override_font_sizes/font_size = 19
+text = "Description Here"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="UpgradeButton" type="Button" parent="Game Manager/Menus/Upgrades" unique_id=1417397729]
+offset_left = 373.0
+offset_top = -21.28
+offset_right = 578.0
+offset_bottom = 57.456
+theme_override_font_sizes/font_size = 30
+text = "UPGRADE"
 
 [node name="Resources" type="Node2D" parent="Game Manager/Menus" unique_id=1874946847]
 script = ExtResource("2_0xm2m")
